@@ -1,0 +1,574 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Energy Coffee</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">
+            Energy Coffee
+        </div>
+
+        <nav>
+            <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+            <a href="javascript.html">JavaScript</a>
+            <a href="jquery.html">jQuery</a>
+            <a href="json.html">JSON</a>
+            <a href="hosting.html" data-es="Hosting" data-en="Hosting">Hosting</a>
+            <a href="cuestionario.html" data-es="Cuestionario" data-en="Quiz">Cuestionario</a>
+            <a href="herramientas.html" data-es="Google Tools" data-en="Google Tools">Google Tools</a>
+
+            <!-- BOTÓN DE IDIOMA -->
+            <button id="idiomaBtn" onclick="cambiarIdioma()">
+                🌐 English
+            </button>
+
+            <!-- MODO OSCURO -->
+            <button id="modoBtn" onclick="cambiarModo()">
+                🌙
+            </button>
+        </nav>
+    </header>
+
+    <!-- PORTADA PRINCIPAL -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <p class="mini-titulo" data-es="☕ CAFÉ PARA TU DÍA" data-en="☕ COFFEE FOR YOUR DAY">☕ CAFÉ PARA TU DÍA</p>
+
+            <h1>Energy <span>Coffee</span></h1>
+
+            <p class="texto-hero"
+               data-es="El sabor que necesitas para acompañar tus mejores momentos."
+               data-en="The flavor you need to enjoy your best moments.">
+                El sabor que necesitas para acompañar
+                tus mejores momentos.
+            </p>
+
+            <p class="texto-descripcion"
+               data-es="Una bebida pensada para estudiantes, jóvenes y amantes del café."
+               data-en="A drink designed for students, young people, and coffee lovers.">
+                Una bebida pensada para estudiantes,
+                jóvenes y amantes del café.
+            </p>
+
+            <div class="botones">
+                <button onclick="mostrarProducto()"
+                        data-es="Conocer producto"
+                        data-en="Discover our product">
+                    Conocer producto
+                </button>
+
+                <a href="#nosotros"
+                   data-es="Nuestra marca"
+                   data-en="Our brand">
+                    Nuestra marca
+                </a>
+            </div>
+
+        </div>
+
+        <!-- PRODUCTO -->
+        <div class="producto-principal">
+
+            <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=500&q=80"
+                alt="Taza de café"
+                class="imagen-cafe"
+            >
+
+            <div class="circulo-cafe">☕</div>
+
+            <h2>ENERGY COFFEE</h2>
+
+            <p data-es="Café energético" data-en="Energy coffee">Café energético</p>
+
+            <div class="precio">$2.50</div>
+
+        </div>
+
+    </section>
+
+    <!-- CARRUSEL BOOTSTRAP -->
+    <section class="carrusel-seccion">
+
+        <p class="titulo-verde">ENERGY COFFEE</p>
+
+        <h2 data-es="Nuestro café" data-en="Our coffee">Nuestro café</h2>
+
+        <div id="cafeCarousel"
+             class="carousel slide carousel-fade"
+             data-bs-ride="carousel"
+             data-bs-interval="3000">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#cafeCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#cafeCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#cafeCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#cafeCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#cafeCarousel" data-bs-slide-to="4"></button>
+            </div>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80"
+                         class="d-block mx-auto imagen-carousel"
+                         alt="Café">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80"
+                         class="d-block mx-auto imagen-carousel"
+                         alt="Café caliente">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80"
+                         class="d-block mx-auto imagen-carousel"
+                         alt="Café con espuma">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=700&q=80"
+                         class="d-block mx-auto imagen-carousel"
+                         alt="Café preparado">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&q=80"
+                         class="d-block mx-auto imagen-carousel"
+                         alt="Taza de café">
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#cafeCarousel"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#cafeCarousel"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- SOBRE LA MARCA -->
+    <section id="nosotros" class="sobre-nosotros">
+
+        <p class="titulo-verde" data-es="NUESTRA MARCA" data-en="OUR BRAND">NUESTRA MARCA</p>
+
+        <h2 data-es="Más que un café, una experiencia"
+            data-en="More than coffee, an experience">
+            Más que un café, una experiencia
+        </h2>
+
+        <p data-es="Energy Coffee es una bebida de café creada especialmente para jóvenes y estudiantes. Queremos ofrecer un producto sencillo, agradable y moderno que pueda acompañarte durante tus actividades del día."
+           data-en="Energy Coffee is a coffee drink created especially for young people and students. We want to offer a simple, enjoyable, and modern product to accompany you throughout your day.">
+            Energy Coffee es una bebida de café creada especialmente
+            para jóvenes y estudiantes. Queremos ofrecer un producto
+            sencillo, agradable y moderno que pueda acompañarte
+            durante tus actividades del día.
+        </p>
+
+    </section>
+
+    <!-- CARACTERÍSTICAS -->
+    <section class="caracteristicas">
+
+        <div class="tarjeta">
+            <div class="icono">🎯</div>
+            <h3 data-es="Público objetivo" data-en="Target audience">Público objetivo</h3>
+            <p data-es="Jóvenes, estudiantes y personas que disfrutan del café durante sus actividades."
+               data-en="Young people, students, and people who enjoy coffee during their activities.">
+                Jóvenes, estudiantes y personas que disfrutan
+                del café durante sus actividades.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">⭐</div>
+            <h3 data-es="Nuestra propuesta" data-en="Our proposal">Nuestra propuesta</h3>
+            <p data-es="Un café práctico, atractivo y pensado para acompañar tu día."
+               data-en="A practical, appealing coffee designed to accompany your day.">
+                Un café práctico, atractivo y pensado
+                para acompañar tu día.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">☕</div>
+            <h3 data-es="Buen sabor" data-en="Great taste">Buen sabor</h3>
+            <p data-es="Un sabor agradable para disfrutar en cualquier momento."
+               data-en="A pleasant flavor to enjoy at any time.">
+                Un sabor agradable para disfrutar
+                en cualquier momento.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">⚡</div>
+            <h3 data-es="Para tu día" data-en="For your day">Para tu día</h3>
+            <p data-es="Ideal para acompañar tus momentos de estudio, trabajo y descanso."
+               data-en="Perfect for your study, work, and relaxation moments.">
+                Ideal para acompañar tus momentos
+                de estudio, trabajo y descanso.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- IDENTIDAD DE LA MARCA -->
+    <section class="identidad">
+
+        <div class="identidad-info">
+            <p class="titulo-verde" data-es="IDENTIDAD VISUAL" data-en="VISUAL IDENTITY">IDENTIDAD VISUAL</p>
+
+            <h2 data-es="Los colores de Energy Coffee"
+                data-en="Energy Coffee colors">
+                Los colores de Energy Coffee
+            </h2>
+
+            <p data-es="Nuestra identidad utiliza colores relacionados con el café y la naturaleza. Cada color representa una característica diferente de nuestra marca."
+               data-en="Our identity uses colors associated with coffee and nature. Each color represents a different characteristic of our brand.">
+                Nuestra identidad utiliza colores relacionados
+                con el café y la naturaleza. Cada color representa
+                una característica diferente de nuestra marca.
+            </p>
+        </div>
+
+        <div class="colores">
+
+            <div class="color">
+                <div class="muestra marron"></div>
+                <div>
+                    <h3 data-es="Marrón" data-en="Brown">Marrón</h3>
+                    <p>#6F4E37</p>
+                    <small data-es="Café, confianza y tradición."
+                           data-en="Coffee, trust, and tradition.">
+                        Café, confianza y tradición.
+                    </small>
+                </div>
+            </div>
+
+            <div class="color">
+                <div class="muestra beige"></div>
+                <div>
+                    <h3 data-es="Beige" data-en="Beige">Beige</h3>
+                    <p>#F5E6D3</p>
+                    <small data-es="Tranquilidad y comodidad."
+                           data-en="Peace and comfort.">
+                        Tranquilidad y comodidad.
+                    </small>
+                </div>
+            </div>
+
+            <div class="color">
+                <div class="muestra verde"></div>
+                <div>
+                    <h3 data-es="Verde" data-en="Green">Verde</h3>
+                    <p>#6B8E23</p>
+                    <small data-es="Naturalidad y frescura."
+                           data-en="Nature and freshness.">
+                        Naturalidad y frescura.
+                    </small>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TECNOLOGÍAS -->
+    <section class="web">
+
+        <p class="titulo-verde" data-es="PROYECTO WEB" data-en="WEB PROJECT">PROYECTO WEB</p>
+
+        <h2 data-es="Tecnologías utilizadas" data-en="Technologies used">Tecnologías utilizadas</h2>
+
+        <p data-es="En este proyecto aprenderás sobre diferentes tecnologías utilizadas para crear páginas web."
+           data-en="In this project, you will learn about different technologies used to create websites.">
+            En este proyecto aprenderás sobre diferentes
+            tecnologías utilizadas para crear páginas web.
+        </p>
+
+        <div class="tecnologias">
+
+            <div class="tecnologia">
+                <div class="tecnologia-icono">JS</div>
+                <h3>JavaScript</h3>
+                <p data-es="Variables, funciones y eventos."
+                   data-en="Variables, functions, and events.">
+                    Variables, funciones y eventos.
+                </p>
+                <a href="javascript.html" data-es="Explorar →" data-en="Explore →">Explorar →</a>
+            </div>
+
+            <div class="tecnologia">
+                <div class="tecnologia-icono">jQ</div>
+                <h3>jQuery</h3>
+                <p data-es="Efectos y funciones para páginas web."
+                   data-en="Effects and functions for websites.">
+                    Efectos y funciones para páginas web.
+                </p>
+                <a href="jquery.html" data-es="Explorar →" data-en="Explore →">Explorar →</a>
+            </div>
+
+            <div class="tecnologia">
+                <div class="tecnologia-icono">{ }</div>
+                <h3>JSON</h3>
+                <p data-es="Intercambio y organización de datos."
+                   data-en="Data exchange and organization.">
+                    Intercambio y organización de datos.
+                </p>
+                <a href="json.html" data-es="Explorar →" data-en="Explore →">Explorar →</a>
+            </div>
+
+            <div class="tecnologia">
+                <div class="tecnologia-icono">☁</div>
+                <h3>Hosting</h3>
+                <p data-es="Publicación de páginas en Internet."
+                   data-en="Publishing websites on the Internet.">
+                    Publicación de páginas en Internet.
+                </p>
+                <a href="hosting.html" data-es="Explorar →" data-en="Explore →">Explorar →</a>
+            </div>
+
+        </div>
+
+        <!-- HERRAMIENTAS GOOGLE -->
+        <div class="google-tools">
+
+            <h2 data-es="🟢 Herramientas gratuitas de Google"
+                data-en="🟢 Free Google tools">
+                🟢 Herramientas gratuitas de Google
+            </h2>
+
+            <p data-es="Conoce 15 herramientas gratuitas de Google y descubre para qué sirven."
+               data-en="Learn about 15 free Google tools and discover what they are used for.">
+                Conoce 15 herramientas gratuitas de Google
+                y descubre para qué sirven.
+            </p>
+
+            <a class="boton-cuestionario" href="herramientas.html"
+               data-es="🔎 Ver las 15 herramientas"
+               data-en="🔎 View the 15 tools">
+                🔎 Ver las 15 herramientas
+            </a>
+
+        </div>
+
+        <a class="boton-cuestionario" href="cuestionario.html"
+           data-es="📝 Ir al cuestionario"
+           data-en="📝 Go to the quiz">
+            📝 Ir al cuestionario
+        </a>
+
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="bloque" id="contacto">
+
+        <p class="titulo-verde" data-es="CONTÁCTANOS" data-en="CONTACT US">CONTÁCTANOS</p>
+
+        <h2 data-es="Escríbenos un mensaje" data-en="Send us a message">
+            Escríbenos un mensaje
+        </h2>
+
+        <p data-es="¿Tienes alguna pregunta o comentario sobre Energy Coffee? Completa el formulario."
+           data-en="Do you have a question or comment about Energy Coffee? Fill out the form.">
+            ¿Tienes alguna pregunta o comentario sobre Energy Coffee?
+            Completa el formulario.
+        </p>
+
+        <form id="formularioContacto">
+
+            <div class="mb-3">
+                <label for="nombreContacto" class="form-label"
+                       data-es="Nombre:" data-en="Name:">
+                    Nombre:
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="nombreContacto"
+                    name="nombre"
+                    maxlength="100"
+                    required
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="correoContacto" class="form-label"
+                       data-es="Correo electrónico:" data-en="Email address:">
+                    Correo electrónico:
+                </label>
+
+                <input
+                    type="email"
+                    class="form-control"
+                    id="correoContacto"
+                    name="correo"
+                    maxlength="200"
+                    required
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="mensajeContacto" class="form-label"
+                       data-es="Mensaje:" data-en="Message:">
+                    Mensaje:
+                </label>
+
+                <textarea
+                    class="form-control"
+                    id="mensajeContacto"
+                    name="mensaje"
+                    rows="5"
+                    maxlength="2000"
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit" id="enviarContacto"
+                    data-es="Enviar mensaje" data-en="Send message">
+                Enviar mensaje
+            </button>
+
+            <p id="estadoFormulario" role="status" aria-live="polite"></p>
+
+        </form>
+
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <h3>☕ Energy Coffee</h3>
+
+        <p data-es="El café que acompaña tus mejores momentos."
+           data-en="The coffee that accompanies your best moments.">
+            El café que acompaña tus mejores momentos.
+        </p>
+
+        <p>©️ 2026 Energy Coffee</p>
+
+    </footer>
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- TU JAVASCRIPT -->
+    <script src="script.js"></script>
+
+    <!-- CAMBIAR IDIOMA -->
+    <script>
+        let idiomaActual = "es";
+
+        function cambiarIdioma() {
+            const elementos = document.querySelectorAll("[data-es][data-en]");
+
+            if (idiomaActual === "es") {
+                elementos.forEach(function(elemento) {
+                    elemento.textContent = elemento.getAttribute("data-en");
+                });
+
+                document.getElementById("idiomaBtn").textContent = "🌐 Español";
+                document.documentElement.lang = "en";
+                idiomaActual = "en";
+            } else {
+                elementos.forEach(function(elemento) {
+                    elemento.textContent = elemento.getAttribute("data-es");
+                });
+
+                document.getElementById("idiomaBtn").textContent = "🌐 English";
+                document.documentElement.lang = "es";
+                idiomaActual = "es";
+            }
+        }
+    </script>
+
+    <!-- ENVÍO DEL FORMULARIO A DISCORD -->
+    <script>
+        const WEBHOOK_URL = "https://discord.com/api/webhooks/1558111329485856960/jYyCpYGgDMk090kbrI09OJv3s6LBpkhpHwQMEkEkbi87apEYSMxSwy8VgwVqzp8hCi6a";
+        const formularioContacto = document.getElementById("formularioContacto");
+
+        if (formularioContacto) {
+            formularioContacto.addEventListener("submit", async function(event) {
+                event.preventDefault();
+
+                const boton = document.getElementById("enviarContacto");
+                const estado = document.getElementById("estadoFormulario");
+
+                const nombre = document.getElementById("nombreContacto").value.trim();
+                const correo = document.getElementById("correoContacto").value.trim();
+                const mensaje = document.getElementById("mensajeContacto").value.trim();
+
+                if (!nombre || !correo || !mensaje) {
+                    estado.textContent = idiomaActual === "en"
+                        ? "Please complete all fields."
+                        : "Completa todos los campos.";
+                    return;
+                }
+
+                boton.disabled = true;
+                estado.textContent = idiomaActual === "en"
+                    ? "Sending message..."
+                    : "Enviando mensaje...";
+
+                try {
+                    const respuesta = await fetch(WEBHOOK_URL, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            content: `☕ **Nuevo mensaje de Energy Coffee**\n**Nombre:** ${nombre}\n**Correo:** ${correo}\n**Mensaje:** ${mensaje}`
+                        })
+                    });
+
+                    if (!respuesta.ok) throw new Error();
+
+                    estado.textContent = idiomaActual === "en"
+                        ? "Message sent successfully!"
+                        : "¡Mensaje enviado correctamente!";
+
+                    formularioContacto.reset();
+
+                } catch (error) {
+                    estado.textContent = idiomaActual === "en"
+                        ? "Error sending to Discord."
+                        : "Error al enviar a Discord.";
+
+                    console.error(error);
+                } finally {
+                    boton.disabled = false;
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
+```

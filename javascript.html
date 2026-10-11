@@ -1,0 +1,249 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Energy Coffee | JavaScript</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">☕ ENERGY COFFEE</div>
+
+    <nav>
+
+        <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+
+        <a href="javascript.html" data-es="JavaScript" data-en="JavaScript">JavaScript</a>
+
+        <a href="jquery.html" data-es="jQuery" data-en="jQuery">jQuery</a>
+
+        <a href="json.html" data-es="JSON" data-en="JSON">JSON</a>
+
+        <a href="hosting.html" data-es="Hosting" data-en="Hosting">Hosting</a>
+
+        <a href="google.html" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+
+        <a href="cuestionario.html" data-es="Cuestionario" data-en="Questionnaire">Cuestionario</a>
+
+        <button id="idiomaBtn" onclick="cambiarIdioma()">
+            🌐 English
+        </button>
+
+        <button
+            id="themeToggleBtn"
+            class="btn-theme"
+            onclick="toggleTheme()">
+
+            🌙 Modo Oscuro
+
+        </button>
+
+    </nav>
+
+</header>
+
+
+<section class="titulo-pagina">
+
+    <p data-es="TECNOLOGÍA WEB" data-en="WEB TECHNOLOGY">
+        TECNOLOGÍA WEB
+    </p>
+
+    <h1 data-es="JavaScript" data-en="JavaScript">JavaScript</h1>
+
+    <span
+        data-es="Lenguaje utilizado para agregar interactividad y comportamiento a las páginas web."
+        data-en="A language used to add interactivity and behavior to web pages.">
+
+        Lenguaje utilizado para agregar interactividad
+        y comportamiento a las páginas web.
+
+    </span>
+
+</section>
+
+
+<main class="contenido">
+
+    <section class="bloque">
+
+        <h2 data-es="¿Qué es JavaScript?" data-en="What is JavaScript?">
+            ¿Qué es JavaScript?
+        </h2>
+
+        <p
+            data-es="JavaScript es un lenguaje de programación utilizado principalmente para crear páginas web interactivas."
+            data-en="JavaScript is a programming language mainly used to create interactive web pages.">
+
+            JavaScript es un lenguaje de programación utilizado
+            principalmente para crear páginas web interactivas.
+
+        </p>
+
+        <p
+            data-es="Permite responder a las acciones de los usuarios, modificar elementos y crear diferentes funciones."
+            data-en="It allows pages to respond to user actions, modify elements, and create different functions.">
+
+            Permite responder a las acciones de los usuarios,
+            modificar elementos y crear diferentes funciones.
+
+        </p>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="Variables" data-en="Variables">Variables</h2>
+
+        <p
+            data-es="Las variables permiten guardar información que puede utilizarse durante la ejecución de un programa."
+            data-en="Variables store information that can be used while a program is running.">
+
+            Las variables permiten guardar información que puede
+            utilizarse durante la ejecución de un programa.
+
+        </p>
+
+        <pre><code>
+let nombre = "Energy Coffee";
+let precio = 2.50;
+        </code></pre>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="Funciones" data-en="Functions">Funciones</h2>
+
+        <p
+            data-es="Una función es un bloque de código que realiza una tarea específica."
+            data-en="A function is a block of code that performs a specific task.">
+
+            Una función es un bloque de código que realiza
+            una tarea específica.
+
+        </p>
+
+        <pre><code>
+function saludar() {
+
+    alert("¡Bienvenido a Energy Coffee!");
+
+}
+        </code></pre>
+
+        <button onclick="saludar()" data-es="Probar función" data-en="Test function">
+            Probar función
+        </button>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="Eventos" data-en="Events">Eventos</h2>
+
+        <p
+            data-es="Los eventos permiten ejecutar acciones cuando el usuario realiza alguna actividad en la página."
+            data-en="Events allow actions to run when the user does something on the page.">
+
+            Los eventos permiten ejecutar acciones cuando
+            el usuario realiza alguna actividad en la página.
+
+        </p>
+
+        <pre><code>
+button.onclick = function() {
+
+    alert("Has presionado el botón");
+
+};
+        </code></pre>
+
+    </section>
+
+
+    <section class="fuentes">
+
+        <h3 data-es="Recursos y bibliografía" data-en="Resources and References">
+            Recursos y bibliografía
+        </h3>
+
+        <p>MDN Web Docs</p>
+
+        <p>W3Schools</p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <h3>☕ Energy Coffee</h3>
+
+    <p
+        data-es="Investigación sobre JavaScript"
+        data-en="Research on JavaScript">
+
+        Investigación sobre JavaScript
+
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+    let idiomaActual = "es";
+
+    function cambiarIdioma() {
+
+        const elementos = document.querySelectorAll("[data-es][data-en]");
+        const boton = document.getElementById("idiomaBtn");
+
+        if (idiomaActual === "es") {
+
+            elementos.forEach(function(elemento) {
+                elemento.textContent = elemento.getAttribute("data-en");
+            });
+
+            boton.textContent = "🌐 Español";
+            document.documentElement.lang = "en";
+            idiomaActual = "en";
+
+        } else {
+
+            elementos.forEach(function(elemento) {
+                elemento.textContent = elemento.getAttribute("data-es");
+            });
+
+            boton.textContent = "🌐 English";
+            document.documentElement.lang = "es";
+            idiomaActual = "es";
+
+        }
+
+    }
+
+</script>
+
+</body>
+
+</html>
+```

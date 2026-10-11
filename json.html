@@ -1,0 +1,306 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Energy Coffee | JSON</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">☕ ENERGY COFFEE</div>
+
+    <nav>
+        <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="javascript.html" data-es="JavaScript" data-en="JavaScript">JavaScript</a>
+        <a href="jquery.html" data-es="jQuery" data-en="jQuery">jQuery</a>
+        <a href="json.html" data-es="JSON" data-en="JSON">JSON</a>
+        <a href="hosting.html" data-es="Hosting" data-en="Hosting">Hosting</a>
+        <a href="cuestionario.html" data-es="Cuestionario" data-en="Questionnaire">Cuestionario</a>
+
+        <!-- Botón para cambiar el idioma -->
+        <button id="idiomaBtn" onclick="cambiarIdioma()">
+            🌐 English
+        </button>
+
+        <!-- Botón de modo oscuro y claro -->
+        <button
+            id="themeToggleBtn"
+            class="btn-theme"
+            onclick="toggleTheme()">
+            🌙 Modo Oscuro
+        </button>
+    </nav>
+
+</header>
+
+
+<section class="titulo-pagina">
+
+    <p data-es="TECNOLOGÍA WEB" data-en="WEB TECHNOLOGY">
+        TECNOLOGÍA WEB
+    </p>
+
+    <h1>JSON</h1>
+
+    <span
+        data-es="Un formato utilizado para almacenar e intercambiar datos."
+        data-en="A format used to store and exchange data.">
+
+        Un formato utilizado para almacenar e intercambiar datos.
+
+    </span>
+
+</section>
+
+
+<main class="contenido">
+
+
+    <section class="bloque">
+
+        <h2 data-es="¿Qué es JSON?" data-en="What is JSON?">
+            ¿Qué es JSON?
+        </h2>
+
+        <p
+            data-es="JSON significa JavaScript Object Notation. Es un formato de texto utilizado para almacenar y transportar información."
+            data-en="JSON stands for JavaScript Object Notation. It is a text format used to store and transport information.">
+
+            JSON significa JavaScript Object Notation.
+            Es un formato de texto utilizado para almacenar
+            y transportar información.
+
+        </p>
+
+        <p
+            data-es="Es muy utilizado en aplicaciones web para intercambiar información entre un cliente y un servidor."
+            data-en="It is widely used in web applications to exchange information between a client and a server.">
+
+            Es muy utilizado en aplicaciones web para intercambiar
+            información entre un cliente y un servidor.
+
+        </p>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="Pares clave-valor" data-en="Key-Value Pairs">
+            Pares clave-valor
+        </h2>
+
+        <p
+            data-es="JSON utiliza pares de clave y valor para organizar la información."
+            data-en="JSON uses key-value pairs to organize information.">
+
+            JSON utiliza pares de clave y valor para organizar
+            la información.
+
+        </p>
+
+        <pre><code>
+{
+    "nombre": "Energy Coffee",
+    "precio": 2.50,
+    "disponible": true
+}
+        </code></pre>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="Objeto JavaScript" data-en="JavaScript Object">
+            Objeto JavaScript
+        </h2>
+
+        <pre><code>
+const producto = {
+    nombre: "Energy Coffee",
+    precio: 2.50
+};
+        </code></pre>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="Cadena JSON" data-en="JSON String">
+            Cadena JSON
+        </h2>
+
+        <pre><code>
+{
+    "nombre": "Energy Coffee",
+    "precio": 2.50
+}
+        </code></pre>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="Objetos y arreglos" data-en="Objects and Arrays">
+            Objetos y arreglos
+        </h2>
+
+        <p
+            data-es="JSON también puede contener arreglos, los cuales permiten guardar varios elementos dentro de una misma estructura."
+            data-en="JSON can also contain arrays, which allow several elements to be stored within the same structure.">
+
+            JSON también puede contener arreglos, los cuales permiten
+            guardar varios elementos dentro de una misma estructura.
+
+        </p>
+
+        <pre><code>
+{
+    "productos": [
+        "Energy Coffee",
+        "Coffee Classic",
+        "Coffee Latte"
+    ]
+}
+        </code></pre>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="JSON en las aplicaciones web" data-en="JSON in Web Applications">
+            JSON en las aplicaciones web
+        </h2>
+
+        <p
+            data-es="Una aplicación web puede solicitar información a un servidor. El servidor puede responder utilizando JSON y JavaScript puede utilizar esos datos para mostrarlos en la página."
+            data-en="A web application can request information from a server. The server can respond using JSON, and JavaScript can use that data to display it on the page.">
+
+            Una aplicación web puede solicitar información a un servidor.
+            El servidor puede responder utilizando JSON y JavaScript
+            puede utilizar esos datos para mostrarlos en la página.
+
+        </p>
+
+        <div class="flujo">
+
+            <div data-es="🌐 Página web" data-en="🌐 Web Page">
+                🌐 Página web
+            </div>
+
+            <div>↓</div>
+
+            <div data-es="📡 Solicitud" data-en="📡 Request">
+                📡 Solicitud
+            </div>
+
+            <div>↓</div>
+
+            <div data-es="🖥️ Servidor" data-en="🖥️ Server">
+                🖥️ Servidor
+            </div>
+
+            <div>↓</div>
+
+            <div data-es="📦 Datos JSON" data-en="📦 JSON Data">
+                📦 Datos JSON
+            </div>
+
+            <div>↓</div>
+
+            <div data-es="🌐 Página web" data-en="🌐 Web Page">
+                🌐 Página web
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="fuentes">
+
+        <h3 data-es="Recursos y bibliografía" data-en="Resources and References">
+            Recursos y bibliografía
+        </h3>
+
+        <p>MDN Web Docs</p>
+        <p>W3Schools</p>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <h3>☕ Energy Coffee</h3>
+
+    <p
+        data-es="Investigación sobre JSON"
+        data-en="Research on JSON">
+
+        Investigación sobre JSON
+
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+    let idiomaActual = "es";
+
+    function cambiarIdioma() {
+
+        const elementos = document.querySelectorAll("[data-es][data-en]");
+        const boton = document.getElementById("idiomaBtn");
+
+        if (idiomaActual === "es") {
+
+            elementos.forEach(function(elemento) {
+                elemento.textContent = elemento.getAttribute("data-en");
+            });
+
+            boton.textContent = "🌐 Español";
+            document.documentElement.lang = "en";
+            idiomaActual = "en";
+
+        } else {
+
+            elementos.forEach(function(elemento) {
+                elemento.textContent = elemento.getAttribute("data-es");
+            });
+
+            boton.textContent = "🌐 English";
+            document.documentElement.lang = "es";
+            idiomaActual = "es";
+
+        }
+
+    }
+
+</script>
+
+</body>
+
+</html>
+```

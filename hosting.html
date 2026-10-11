@@ -1,0 +1,460 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Energy Coffee | Hosting y Dominios</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="logo">
+            ☕ ENERGY COFFEE
+        </div>
+
+        <nav>
+
+            <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+
+            <a href="javascript.html" data-es="JavaScript" data-en="JavaScript">JavaScript</a>
+
+            <a href="jquery.html" data-es="jQuery" data-en="jQuery">jQuery</a>
+
+            <a href="json.html" data-es="JSON" data-en="JSON">JSON</a>
+
+            <a href="hosting.html" class="active" data-es="Hosting" data-en="Hosting">Hosting</a>
+
+            <a href="google.html" data-es="Herramientas Google" data-en="Google Tools">Herramientas Google</a>
+
+            <a href="cuestionario.html" data-es="Cuestionario" data-en="Questionnaire">Cuestionario</a>
+
+            <!-- Botón para cambiar el idioma -->
+
+            <button
+                id="idiomaBtn"
+                onclick="cambiarIdioma()">
+
+                🌐 English
+
+            </button>
+
+            <!-- Botón Modo Claro/Oscuro -->
+
+            <button
+                id="themeToggleBtn"
+                class="btn-theme"
+                onclick="toggleTheme()">
+
+                🌙 Modo Oscuro
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- TÍTULO -->
+
+    <section class="titulo-pagina">
+
+        <p data-es="TECNOLOGÍA WEB" data-en="WEB TECHNOLOGY">
+            TECNOLOGÍA WEB
+        </p>
+
+        <h1 data-es="Hosting y Dominios" data-en="Hosting and Domains">
+            Hosting y Dominios
+        </h1>
+
+        <span
+            data-es="¿Cómo hacemos que una página web esté disponible en Internet?"
+            data-en="How do we make a website available on the Internet?">
+
+            ¿Cómo hacemos que una página web esté disponible en Internet?
+
+        </span>
+
+    </section>
+
+
+    <main class="contenido">
+
+
+        <!-- WEB HOSTING -->
+
+        <section class="bloque">
+
+            <h2 data-es="¿Qué es Web Hosting?" data-en="What is Web Hosting?">
+                ¿Qué es Web Hosting?
+            </h2>
+
+            <p
+                data-es="Web Hosting es un servicio que permite almacenar los archivos de un sitio web en un servidor conectado a Internet."
+                data-en="Web hosting is a service that stores website files on a server connected to the Internet.">
+
+                Web Hosting es un servicio que permite almacenar los archivos
+                de un sitio web en un servidor conectado a Internet.
+
+            </p>
+
+            <p
+                data-es="Gracias al hosting, las personas pueden acceder a las páginas web desde diferentes dispositivos."
+                data-en="Thanks to hosting, people can access websites from different devices.">
+
+                Gracias al hosting, las personas pueden acceder a las páginas
+                web desde diferentes dispositivos.
+
+            </p>
+
+        </section>
+
+
+        <!-- TIPOS DE HOSTING -->
+
+        <section class="bloque">
+
+            <h2 data-es="Tipos de Hosting" data-en="Types of Hosting">
+                Tipos de Hosting
+            </h2>
+
+            <div class="tarjetas">
+
+                <div class="tarjeta">
+
+                    <h3 data-es="Hosting compartido" data-en="Shared Hosting">
+                        Hosting compartido
+                    </h3>
+
+                    <p
+                        data-es="Varios sitios web utilizan los recursos de un mismo servidor."
+                        data-en="Several websites use the resources of the same server.">
+
+                        Varios sitios web utilizan los recursos
+                        de un mismo servidor.
+
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>VPS</h3>
+
+                    <p
+                        data-es="Un servidor físico se divide en diferentes servidores virtuales."
+                        data-en="A physical server is divided into different virtual servers.">
+
+                        Un servidor físico se divide en diferentes
+                        servidores virtuales.
+
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3 data-es="Nube" data-en="Cloud">
+                        Nube
+                    </h3>
+
+                    <p
+                        data-es="Utiliza recursos de diferentes servidores conectados a través de Internet."
+                        data-en="It uses resources from different servers connected through the Internet.">
+
+                        Utiliza recursos de diferentes servidores
+                        conectados a través de Internet.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- VERCEL -->
+
+        <section class="bloque">
+
+            <h2 data-es="¿Qué es Vercel?" data-en="What is Vercel?">
+                ¿Qué es Vercel?
+            </h2>
+
+            <p
+                data-es="Vercel es una plataforma utilizada para desplegar sitios web y aplicaciones."
+                data-en="Vercel is a platform used to deploy websites and applications.">
+
+                Vercel es una plataforma utilizada para desplegar
+                sitios web y aplicaciones.
+
+            </p>
+
+            <p
+                data-es="Puede conectarse con GitHub para publicar automáticamente un proyecto que se encuentra en un repositorio."
+                data-en="It can connect to GitHub to automatically publish a project stored in a repository.">
+
+                Puede conectarse con GitHub para publicar automáticamente
+                un proyecto que se encuentra en un repositorio.
+
+            </p>
+
+        </section>
+
+
+        <!-- DOMINIO -->
+
+        <section class="bloque">
+
+            <h2 data-es="¿Qué es un dominio?" data-en="What is a Domain?">
+                ¿Qué es un dominio?
+            </h2>
+
+            <p
+                data-es="Un dominio es el nombre que se utiliza para identificar y acceder a un sitio web."
+                data-en="A domain is the name used to identify and access a website.">
+
+                Un dominio es el nombre que se utiliza para identificar
+                y acceder a un sitio web.
+
+            </p>
+
+            <div class="dominio-ejemplo">
+
+                <strong>energycoffee.com</strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- TLD -->
+
+        <section class="bloque">
+
+            <h2>TLD</h2>
+
+            <p
+                data-es="TLD significa dominio de nivel superior."
+                data-en="TLD stands for Top-Level Domain.">
+
+                TLD significa dominio de nivel superior.
+
+            </p>
+
+            <div class="tld">
+
+                <div>
+
+                    <strong>.com</strong>
+
+                    <span data-es="Comercial" data-en="Commercial">
+                        Comercial
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>.org</strong>
+
+                    <span data-es="Organizaciones" data-en="Organizations">
+                        Organizaciones
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>.net</strong>
+
+                    <span data-es="Redes" data-en="Networks">
+                        Redes
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUBDOMINIO -->
+
+        <section class="bloque">
+
+            <h2 data-es="¿Qué es un subdominio?" data-en="What is a Subdomain?">
+                ¿Qué es un subdominio?
+            </h2>
+
+            <p
+                data-es="Un subdominio es una parte adicional que aparece antes del dominio principal."
+                data-en="A subdomain is an additional part that appears before the main domain.">
+
+                Un subdominio es una parte adicional que aparece antes
+                del dominio principal.
+
+            </p>
+
+            <div class="dominio-ejemplo">
+
+                blog.energycoffee.com
+
+            </div>
+
+        </section>
+
+
+        <!-- DNS -->
+
+        <section class="bloque">
+
+            <h2 data-es="Propagación DNS" data-en="DNS Propagation">
+                Propagación DNS
+            </h2>
+
+            <p
+                data-es="El DNS permite encontrar la dirección asociada a un dominio. Cuando se realiza un cambio en los DNS, la información puede tardar un tiempo en actualizarse en diferentes servidores."
+                data-en="DNS helps find the address associated with a domain. When DNS changes are made, the information may take some time to update across different servers.">
+
+                El DNS permite encontrar la dirección asociada a un dominio.
+                Cuando se realiza un cambio en los DNS, la información puede
+                tardar un tiempo en actualizarse en diferentes servidores.
+
+            </p>
+
+
+            <div class="flujo">
+
+                <div data-es="👤 Usuario" data-en="👤 User">
+                    👤 Usuario
+                </div>
+
+                <div>↓</div>
+
+                <div data-es="🌐 Escribe el dominio" data-en="🌐 Enters the domain">
+                    🌐 Escribe el dominio
+                </div>
+
+                <div>↓</div>
+
+                <div data-es="🔎 DNS busca la dirección" data-en="🔎 DNS finds the address">
+                    🔎 DNS busca la dirección
+                </div>
+
+                <div>↓</div>
+
+                <div data-es="🖥️ Hosting" data-en="🖥️ Hosting">
+                    🖥️ Hosting
+                </div>
+
+                <div>↓</div>
+
+                <div data-es="✅ Se muestra la página" data-en="✅ The page is displayed">
+                    ✅ Se muestra la página
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FUENTES -->
+
+        <section class="fuentes">
+
+            <h3 data-es="Recursos y bibliografía" data-en="Resources and References">
+                Recursos y bibliografía
+            </h3>
+
+            <p>Vercel Documentation</p>
+
+            <p>W3Schools</p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <h3>☕ Energy Coffee</h3>
+
+        <p
+            data-es="Investigación sobre Hosting y Dominios"
+            data-en="Research on Hosting and Domains">
+
+            Investigación sobre Hosting y Dominios
+
+        </p>
+
+    </footer>
+
+
+    <!-- Bootstrap 5 JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+    <script>
+
+        let idiomaActual = "es";
+
+        function cambiarIdioma() {
+
+            const elementos = document.querySelectorAll("[data-es][data-en]");
+            const boton = document.getElementById("idiomaBtn");
+
+            if (idiomaActual === "es") {
+
+                elementos.forEach(function(elemento) {
+                    elemento.textContent = elemento.getAttribute("data-en");
+                });
+
+                boton.textContent = "🌐 Español";
+                document.documentElement.lang = "en";
+                idiomaActual = "en";
+
+            } else {
+
+                elementos.forEach(function(elemento) {
+                    elemento.textContent = elemento.getAttribute("data-es");
+                });
+
+                boton.textContent = "🌐 English";
+                document.documentElement.lang = "es";
+                idiomaActual = "es";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```

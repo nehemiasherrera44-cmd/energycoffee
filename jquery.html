@@ -1,0 +1,300 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Energy Coffee | jQuery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">☕ ENERGY COFFEE</div>
+
+    <nav>
+        <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="javascript.html" data-es="JavaScript" data-en="JavaScript">JavaScript</a>
+        <a href="jquery.html" data-es="jQuery" data-en="jQuery">jQuery</a>
+        <a href="json.html" data-es="JSON" data-en="JSON">JSON</a>
+        <a href="hosting.html" data-es="Hosting" data-en="Hosting">Hosting</a>
+        <a href="cuestionario.html" data-es="Cuestionario" data-en="Questionnaire">Cuestionario</a>
+
+        <button id="idiomaBtn" onclick="cambiarIdioma()">
+            🌐 English
+        </button>
+
+        <!-- Botón de modo oscuro y claro -->
+        <button
+            id="themeToggleBtn"
+            class="btn-theme"
+            onclick="toggleTheme()">
+            🌙 Modo Oscuro
+        </button>
+    </nav>
+
+</header>
+
+
+<section class="titulo-pagina">
+
+    <p data-es="TECNOLOGÍA WEB" data-en="WEB TECHNOLOGY">
+        TECNOLOGÍA WEB
+    </p>
+
+    <h1>jQuery</h1>
+
+    <span
+        data-es="Una biblioteca de JavaScript que facilita el desarrollo de páginas web interactivas."
+        data-en="A JavaScript library that makes it easier to develop interactive web pages.">
+
+        Una biblioteca de JavaScript que facilita el desarrollo
+        de páginas web interactivas.
+
+    </span>
+
+</section>
+
+
+<main class="contenido">
+
+
+    <section class="bloque">
+
+        <h2 data-es="¿Qué es jQuery?" data-en="What is jQuery?">
+            ¿Qué es jQuery?
+        </h2>
+
+        <p
+            data-es="jQuery es una biblioteca de JavaScript creada para simplificar algunas tareas frecuentes del desarrollo web."
+            data-en="jQuery is a JavaScript library created to simplify common web development tasks.">
+
+            jQuery es una biblioteca de JavaScript creada para
+            simplificar algunas tareas frecuentes del desarrollo web.
+
+        </p>
+
+        <p
+            data-es="Permite seleccionar elementos HTML, manejar eventos y crear efectos de una manera sencilla."
+            data-en="It allows you to select HTML elements, handle events, and create effects easily.">
+
+            Permite seleccionar elementos HTML, manejar eventos
+            y crear efectos de una manera sencilla.
+
+        </p>
+
+        <!-- Imagen pequeña de jQuery -->
+        <img
+            src="https://upload.wikimedia.org/wikipedia/en/9/9e/JQuery_logo.svg"
+            alt="Logo de jQuery"
+            class="imagen-tecnologia"
+        >
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="Sintaxis básica" data-en="Basic Syntax">
+            Sintaxis básica
+        </h2>
+
+        <p
+            data-es="Una de las características principales de jQuery es el uso del símbolo $."
+            data-en="One of the main features of jQuery is the use of the $ symbol.">
+
+            Una de las características principales de jQuery es
+            el uso del símbolo <strong>$</strong>.
+
+        </p>
+
+        <pre><code>
+$("#mensaje").hide();
+
+$("#mensaje").show();
+        </code></pre>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="Ventajas y desventajas" data-en="Advantages and Disadvantages">
+            Ventajas y desventajas
+        </h2>
+
+        <div class="comparacion">
+
+            <div>
+
+                <h3 data-es="Ventajas" data-en="Advantages">Ventajas</h3>
+
+                <ul>
+                    <li data-es="Sintaxis sencilla." data-en="Simple syntax.">Sintaxis sencilla.</li>
+                    <li data-es="Facilita algunas tareas." data-en="Makes some tasks easier.">Facilita algunas tareas.</li>
+                    <li data-es="Permite crear efectos fácilmente." data-en="Makes it easy to create effects.">Permite crear efectos fácilmente.</li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3 data-es="Desventajas" data-en="Disadvantages">Desventajas</h3>
+
+                <ul>
+                    <li data-es="Necesita una biblioteca externa." data-en="Requires an external library.">Necesita una biblioteca externa.</li>
+                    <li data-es="JavaScript moderno ya ofrece muchas alternativas." data-en="Modern JavaScript already offers many alternatives.">JavaScript moderno ya ofrece muchas alternativas.</li>
+                    <li data-es="No siempre es necesario en proyectos nuevos." data-en="It is not always necessary in new projects.">No siempre es necesario en proyectos nuevos.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="Ejemplo de jQuery" data-en="jQuery Example">
+            Ejemplo de jQuery
+        </h2>
+
+        <div id="mensaje" class="mensaje-jquery">
+
+            <span
+                data-es="☕ ¡Este mensaje utiliza jQuery!"
+                data-en="☕ This message uses jQuery!">
+
+                ☕ ¡Este mensaje utiliza jQuery!
+
+            </span>
+
+        </div>
+
+        <button id="botonJquery"
+            data-es="Mostrar / Ocultar"
+            data-en="Show / Hide">
+
+            Mostrar / Ocultar
+
+        </button>
+
+    </section>
+
+
+    <section class="bloque">
+
+        <h2 data-es="JavaScript vs jQuery" data-en="JavaScript vs jQuery">
+            JavaScript vs jQuery
+        </h2>
+
+        <table>
+
+            <tr>
+                <th>JavaScript</th>
+                <th>jQuery</th>
+            </tr>
+
+            <tr>
+                <td>document.querySelector("#mensaje")</td>
+                <td>$("#mensaje")</td>
+            </tr>
+
+            <tr>
+                <td>element.style.display = "none"</td>
+                <td>$("#mensaje").hide()</td>
+            </tr>
+
+            <tr>
+                <td>element.style.display = "block"</td>
+                <td>$("#mensaje").show()</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <section class="fuentes">
+
+        <h3 data-es="Recursos y bibliografía" data-en="Resources and References">
+            Recursos y bibliografía
+        </h3>
+
+        <p>jQuery Documentation</p>
+        <p>W3Schools</p>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <h3>☕ Energy Coffee</h3>
+
+    <p
+        data-es="Investigación sobre jQuery"
+        data-en="Research on jQuery">
+
+        Investigación sobre jQuery
+
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+    let idiomaActual = "es";
+
+    function cambiarIdioma() {
+
+        const elementos = document.querySelectorAll("[data-es][data-en]");
+        const boton = document.getElementById("idiomaBtn");
+
+        if (idiomaActual === "es") {
+
+            elementos.forEach(function(elemento) {
+                elemento.textContent = elemento.getAttribute("data-en");
+            });
+
+            boton.textContent = "🌐 Español";
+            document.documentElement.lang = "en";
+            idiomaActual = "en";
+
+        } else {
+
+            elementos.forEach(function(elemento) {
+                elemento.textContent = elemento.getAttribute("data-es");
+            });
+
+            boton.textContent = "🌐 English";
+            document.documentElement.lang = "es";
+            idiomaActual = "es";
+
+        }
+
+    }
+
+</script>
+
+</body>
+
+</html>
+```
