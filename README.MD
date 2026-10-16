@@ -36,16 +36,16 @@ El formulario de contacto envía los datos mediante fetch() a la URL del Webhook
 
 ## 4. Anexos y Evidencias Gráficas
 ### Anexo 1: Integración con Discord (Formulario vs. Recepción)
-![Anexo 1 Discord](assets/anexo1-discord.png)
+![Anexo 1 Discord](assets/anexo1%20discord.png)
 
 ### Anexo 2: Despliegue Exitoso en Vercel
-![Anexo 2 Vercel](assets/anexo2-vercel.png)
+![Anexo 2 Vercel](assets/anexo2%20vercel.png)
 
 ### Anexo 3: Diseño Responsive y Bootstrap
-![Anexo 3 Responsive](assets/anexo3-responsive.png)
+![Anexo 3 Responsive](assets/anexo3%20responsive.png)
 
 ### Anexo 4: Cuestionario Interactivo en Funcionamiento
-![Anexo 4 Quiz](assets/anexo4-quiz.png)
+![Anexo 4 Quiz](assets/anexo4%20quiz.png)
 
 ### Anexo 5: Estructura del Repositorio en GitHub
 ![Anexo 5 GitHub](assets/anexo5-github.png)
