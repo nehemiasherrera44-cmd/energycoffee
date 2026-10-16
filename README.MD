@@ -22,7 +22,7 @@
 | Acento | #F5F5DC | Fondo beige claro y Highlights |
 
 **Demostración del Carrousel (Bootstrap):**
-![Carousel de Productos](assets/carousel-demo.png)
+![Carousel de Productos](assets/carousel%20demo.png)
 
 ## 2. Investigación Técnica
 1. **JavaScript (Vanilla):** Usado para validar el formulario y la interactividad del menú.
