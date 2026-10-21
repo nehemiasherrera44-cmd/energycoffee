@@ -1,264 +1,142 @@
-/* =================================
-   ENERGY COFFEE
-   JAVASCRIPT PRINCIPAL
-================================= */
+/* Energy Coffee: script compartido por todas las páginas */
 
+const TXT = {
+    es: { claro: "Modo claro", oscuro: "Modo oscuro", otro: "English", pie: "El café que acompaña tus mejores momentos." },
+    en: { claro: "Light mode", oscuro: "Dark mode", otro: "Español", pie: "The coffee that goes with your best moments." }
+};
+const NAV = [
+    ["index.html", "Inicio", "Home"],
+    ["javascript.html", "JavaScript"],
+    ["jquery.html", "jQuery"],
+    ["json.html", "JSON"],
+    ["hosting.html", "Hosting"],
+    ["herramientas.html", "Google Tools"],
+    ["cuestionario.html", "Cuestionario", "Quiz"]
+];
 
-/* =================================
-   MENSAJE DEL PRODUCTO
-================================= */
+function guardado(clave) { try { return localStorage.getItem(clave); } catch (e) { return null; } }
+function guardar(clave, valor) { try { localStorage.setItem(clave, valor); } catch (e) {} }
 
-function mostrarProducto() {
+let idiomaActual = guardado("idioma") === "en" ? "en" : "es";
 
-    alert(
-        "☕ Energy Coffee\n\n" +
-        "Café energético para estudiantes y jóvenes.\n" +
-        "Precio: $2.50"
-    );
+// Cabecera y pie, iguales en todas las páginas
+(function () {
+    const cab = document.getElementById("encabezado");
+    const pie = document.getElementById("pie");
+    const actual = location.pathname.split("/").pop() || "index.html";
 
+    if (cab) {
+        const enlaces = NAV.map(function (n) {
+            const es = n[1], en = n[2] || n[1];
+            const pagina = n[0] === actual || (actual === "" && n[0] === "index.html");
+            return '<a href="' + n[0] + '" data-es="' + es + '" data-en="' + en + '"' +
+                   (pagina ? ' aria-current="page"' : "") + ">" + es + "</a>";
+        }).join("");
+        cab.innerHTML = '<a class="logo" href="index.html">Energy Coffee</a><nav>' + enlaces +
+            '<button type="button" id="idiomaBtn"></button>' +
+            '<button type="button" id="themeToggleBtn"></button></nav>';
+        document.getElementById("idiomaBtn").addEventListener("click", cambiarIdioma);
+        document.getElementById("themeToggleBtn").addEventListener("click", toggleTheme);
+    }
+    if (pie) {
+        pie.innerHTML = '<p><strong>Energy Coffee</strong></p><p data-es="' + TXT.es.pie + '" data-en="' + TXT.en.pie + '">' + TXT.es.pie + "</p><p>© 2026 Energy Coffee</p>";
+    }
+
+    if (guardado("tema") === "oscuro") document.body.classList.add("modo-oscuro");
+    aplicarIdioma();
+})();
+
+function aplicarIdioma() {
+    document.querySelectorAll("[data-es][data-en]").forEach(function (el) {
+        el.textContent = el.getAttribute("data-" + idiomaActual);
+    });
+    document.documentElement.lang = idiomaActual;
+    const b = document.getElementById("idiomaBtn");
+    if (b) b.textContent = TXT[idiomaActual].otro;
+    textoTema();
 }
 
-
-/* =================================
-   EJEMPLO DE JAVASCRIPT
-================================= */
-
-function saludar() {
-
-    alert(
-        "¡Bienvenido a Energy Coffee!\n\n" +
-        "Este mensaje fue creado utilizando JavaScript."
-    );
-
+function cambiarIdioma() {
+    idiomaActual = idiomaActual === "es" ? "en" : "es";
+    guardar("idioma", idiomaActual);
+    aplicarIdioma();
 }
 
-
-/* =================================
-   MODO CLARO Y OSCURO
-================================= */
-
-function cambiarModo() {
-
-    document.body.classList.toggle("modo-oscuro");
-
-    actualizarBotonModo();
-
+function textoTema() {
+    const b = document.getElementById("themeToggleBtn");
+    if (b) b.textContent = document.body.classList.contains("modo-oscuro") ? TXT[idiomaActual].claro : TXT[idiomaActual].oscuro;
 }
-
 
 function toggleTheme() {
-
-    document.body.classList.toggle("modo-oscuro");
-
-    actualizarBotonModo();
-
+    const oscuro = document.body.classList.toggle("modo-oscuro");
+    guardar("tema", oscuro ? "oscuro" : "claro");
+    textoTema();
 }
 
-
-function actualizarBotonModo() {
-
-    const botonModo = document.getElementById("modoBtn");
-
-    const botonTheme = document.getElementById("themeToggleBtn");
-
-    const oscuro =
-        document.body.classList.contains("modo-oscuro");
-
-
-    if (botonModo) {
-
-        botonModo.innerHTML =
-            oscuro ? "☀️" : "🌙";
-
-    }
-
-
-    if (botonTheme) {
-
-        botonTheme.innerHTML =
-            oscuro
-                ? "☀️ Modo Claro"
-                : "🌙 Modo Oscuro";
-
-    }
-
+// Inicio: mensaje del producto
+function mostrarProducto() {
+    alert(idiomaActual === "en"
+        ? "Energy Coffee\n\nEnergy coffee for students and young people.\nPrice: $2.50"
+        : "Energy Coffee\n\nCafé energético para estudiantes y jóvenes.\nPrecio: $2.50");
 }
 
+// JavaScript: función de ejemplo
+function saludar() {
+    alert(idiomaActual === "en"
+        ? "Welcome to Energy Coffee!\n\nThis message was created with JavaScript."
+        : "¡Bienvenido a Energy Coffee!\n\nEste mensaje fue creado utilizando JavaScript.");
+}
 
-/* =================================
-   JQUERY
-================================= */
+// Compatibilidad con tu función anterior
+function cambiarModo() { toggleTheme(); }
 
-$(document).ready(function() {
-
-
-    /* MOSTRAR / OCULTAR MENSAJE */
-
-    $("#botonJquery").click(function() {
-
-        $("#mensaje").slideToggle(500);
-
+// jQuery: mostrar y ocultar el mensaje
+if (window.jQuery) {
+    jQuery(function ($) {
+        $("#botonJquery").on("click", function () { $("#mensaje").slideToggle(500); });
     });
+}
 
-
-    /* =================================
-       MODO OSCURO CON JQUERY
-    ================================= */
-
-    $("#modoOscuro").click(function() {
-
-        $("body").toggleClass("modo-oscuro");
-
-        const oscuro =
-            $("body").hasClass("modo-oscuro");
-
-
-        if (oscuro) {
-
-            $("#modoOscuro").html("☀️ Modo claro");
-
-        } else {
-
-            $("#modoOscuro").html("🌙 Modo oscuro");
-
-        }
-
-    });
-
-
-    /* =================================
-       NAVEGACIÓN SUAVE
-    ================================= */
-
-    $("a[href^='#']").click(function(event) {
-
-        event.preventDefault();
-
-        let destino = $(this.hash);
-
-
-        if (destino.length) {
-
-            $("html, body").animate({
-
-                scrollTop: destino.offset().top
-
-            }, 800);
-
-        }
-
-    });
-
-});
-
-
-/* =================================
-   CUESTIONARIO
-================================= */
-
+// Cuestionario
+const RESPUESTAS = { p1: "c", p2: "a", p3: "a", p4: "a", p5: "a", p6: "a", p7: "b", p8: "a" };
 const quiz = document.getElementById("quiz");
 
-
 if (quiz) {
+    quiz.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const en = idiomaActual === "en";
+        let aciertos = 0, sinResponder = 0;
 
-    quiz.addEventListener("submit", function(event) {
+        Object.keys(RESPUESTAS).forEach(function (p) {
+            const marcada = quiz.querySelector('input[name="' + p + '"]:checked');
+            const bloque = quiz.querySelector('input[name="' + p + '"]').closest(".pregunta");
+            const vieja = bloque.querySelector(".nota");
+            if (vieja) vieja.remove();
+            bloque.classList.remove("ok", "mal");
 
-        event.preventDefault();
-
-
-        let puntos = 0;
-
-
-        const respuestas = {
-
-            p1: "c",
-            p2: "a",
-            p3: "a",
-            p4: "a",
-            p5: "a",
-            p6: "a",
-            p7: "b",
-            p8: "a"
-
-        };
-
-
-        for (let pregunta in respuestas) {
-
-            const seleccionada =
-                document.querySelector(
-                    'input[name="' +
-                    pregunta +
-                    '"]:checked'
-                );
-
-
-            if (
-                seleccionada &&
-                seleccionada.value === respuestas[pregunta]
-            ) {
-
-                puntos++;
-
+            if (!marcada) { sinResponder++; return; }
+            if (marcada.value === RESPUESTAS[p]) {
+                aciertos++;
+                bloque.classList.add("ok");
+            } else {
+                bloque.classList.add("mal");
+                const correcta = quiz.querySelector('input[name="' + p + '"][value="' + RESPUESTAS[p] + '"]').parentElement.textContent.trim();
+                const nota = document.createElement("p");
+                nota.className = "nota";
+                nota.textContent = (en ? "Correct answer: " : "Respuesta correcta: ") + correcta;
+                bloque.appendChild(nota);
             }
-
-        }
-
-
-        const resultado =
-            document.getElementById("resultado");
-
-
-        resultado.style.display = "block";
-
-
-        if (puntos === 8) {
-
-            resultado.innerHTML =
-                "🎉 ¡Excelente! Obtuviste " +
-                puntos +
-                " de 8 respuestas correctas.";
-
-        }
-
-        else if (puntos >= 6) {
-
-            resultado.innerHTML =
-                "👏 ¡Muy bien! Obtuviste " +
-                puntos +
-                " de 8 respuestas correctas.";
-
-        }
-
-        else if (puntos >= 4) {
-
-            resultado.innerHTML =
-                "👍 Buen trabajo. Obtuviste " +
-                puntos +
-                " de 8 respuestas correctas. " +
-                "Puedes repasar nuevamente los temas.";
-
-        }
-
-        else {
-
-            resultado.innerHTML =
-                "📚 Obtuviste " +
-                puntos +
-                " de 8 respuestas correctas. " +
-                "Te recomendamos estudiar nuevamente.";
-
-        }
-
-
-        window.scrollTo({
-
-            top: resultado.offsetTop,
-
-            behavior: "smooth"
-
         });
 
+        const total = Object.keys(RESPUESTAS).length;
+        let msg;
+        if (aciertos === total) msg = en ? "Excellent! You got " + aciertos + " of " + total + " right." : "¡Excelente! Obtuviste " + aciertos + " de " + total + " respuestas correctas.";
+        else if (aciertos >= 6) msg = en ? "Very good! You got " + aciertos + " of " + total + " right." : "¡Muy bien! Obtuviste " + aciertos + " de " + total + " respuestas correctas.";
+        else if (aciertos >= 4) msg = en ? "Good job. You got " + aciertos + " of " + total + " right. Review the topics once more." : "Buen trabajo. Obtuviste " + aciertos + " de " + total + " respuestas correctas. Puedes repasar los temas.";
+        else msg = en ? "You got " + aciertos + " of " + total + " right. We recommend studying again." : "Obtuviste " + aciertos + " de " + total + " respuestas correctas. Te recomendamos estudiar de nuevo.";
+        if (sinResponder) msg += en ? " Unanswered: " + sinResponder + "." : " Sin responder: " + sinResponder + ".";
+        const caja = document.getElementById("resultado");
+        caja.textContent = msg;
+        caja.scrollIntoView({ block: "center" });
     });
-
 }
