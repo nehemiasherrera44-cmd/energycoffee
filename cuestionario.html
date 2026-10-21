@@ -1,397 +1,75 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Energy Coffee | Cuestionario</title>
-
-    <link rel="stylesheet" href="style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy Coffee | Cuestionario</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<header>
-
-    <div class="logo">ENERGY COFFEE</div>
-
-    <nav>
-        <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
-        <a href="javascript.html" data-es="JavaScript" data-en="JavaScript">JavaScript</a>
-        <a href="jquery.html" data-es="jQuery" data-en="jQuery">jQuery</a>
-        <a href="json.html" data-es="JSON" data-en="JSON">JSON</a>
-        <a href="hosting.html" data-es="Hosting" data-en="Hosting">Hosting</a>
-        <a href="cuestionario.html" data-es="Cuestionario" data-en="Questionnaire">Cuestionario</a>
-
-        <!-- Botón para cambiar el idioma -->
-        <button id="idiomaBtn" onclick="cambiarIdioma()">
-            🌐 English
-        </button>
-
-        <!-- Botón de modo oscuro y claro -->
-        <button
-            id="themeToggleBtn"
-            class="btn-theme"
-            onclick="toggleTheme()">
-            🌙 Modo Oscuro
-        </button>
-    </nav>
-
-</header>
-
-
-<section class="titulo-pagina">
-
-    <p
-        data-es="PON A PRUEBA TUS CONOCIMIENTOS"
-        data-en="TEST YOUR KNOWLEDGE">
-
-        PON A PRUEBA TUS CONOCIMIENTOS
-
-    </p>
-
-    <h1
-        data-es="Cuestionario Web"
-        data-en="Web Questionnaire">
-
-        Cuestionario Web
-
-    </h1>
-
-    <span
-        data-es="Responde las preguntas sobre las tecnologías investigadas."
-        data-en="Answer the questions about the technologies you studied.">
-
-        Responde las preguntas sobre las tecnologías investigadas.
-
-    </span>
-
-</section>
-
-
-<main class="contenido">
-
+<header class="encabezado" id="encabezado"></header>
+<main class="contenedor">
+<div class="pagina-titulo">
+<h1 data-es="Cuestionario" data-en="Quiz">Cuestionario</h1>
+<p data-es="Ocho preguntas sobre lo que investigamos." data-en="Eight questions about what we researched.">Ocho preguntas sobre lo que investigamos.</p>
+</div>
+<div class="articulo">
 <form id="quiz">
-
-    <div class="pregunta">
-
-        <h3
-            data-es="1. ¿Qué lenguaje se utiliza para agregar comportamiento e interacción a una página web?"
-            data-en="1. Which language is used to add behavior and interaction to a web page?">
-
-            1. ¿Qué lenguaje se utiliza para agregar comportamiento
-            e interacción a una página web?
-
-        </h3>
-
-        <label>
-            <input type="radio" name="p1" value="a">
-            HTML
-        </label>
-
-        <label>
-            <input type="radio" name="p1" value="b">
-            CSS
-        </label>
-
-        <label>
-            <input type="radio" name="p1" value="c">
-            JavaScript
-        </label>
-
-    </div>
-
-
-    <div class="pregunta">
-
-        <h3
-            data-es="2. ¿Qué símbolo es utilizado frecuentemente en jQuery?"
-            data-en="2. Which symbol is frequently used in jQuery?">
-
-            2. ¿Qué símbolo es utilizado frecuentemente en jQuery?
-
-        </h3>
-
-        <label>
-            <input type="radio" name="p2" value="a">
-            $
-        </label>
-
-        <label>
-            <input type="radio" name="p2" value="b">
-            #
-        </label>
-
-        <label>
-            <input type="radio" name="p2" value="c">
-            @
-        </label>
-
-    </div>
-
-
-    <div class="pregunta">
-
-        <h3
-            data-es="3. ¿Qué significa JSON?"
-            data-en="3. What does JSON stand for?">
-
-            3. ¿Qué significa JSON?
-
-        </h3>
-
-        <label>
-            <input type="radio" name="p3" value="a">
-            JavaScript Object Notation
-        </label>
-
-        <label>
-            <input type="radio" name="p3" value="b">
-            Java System Online Network
-        </label>
-
-        <label>
-            <input type="radio" name="p3" value="c">
-            JavaScript Online Name
-        </label>
-
-    </div>
-
-
-    <div class="pregunta">
-
-        <h3
-            data-es="4. ¿Qué servicio permite almacenar los archivos de un sitio web?"
-            data-en="4. Which service allows you to store website files?">
-
-            4. ¿Qué servicio permite almacenar los archivos
-            de un sitio web?
-
-        </h3>
-
-        <label>
-            <input type="radio" name="p4" value="a">
-            Hosting
-        </label>
-
-        <label>
-            <input type="radio" name="p4" value="b">
-            CSS
-        </label>
-
-        <label>
-            <input type="radio" name="p4" value="c">
-            HTML
-        </label>
-
-    </div>
-
-
-    <div class="pregunta">
-
-        <h3
-            data-es="5. ¿Cuál de los siguientes es un TLD?"
-            data-en="5. Which of the following is a TLD?">
-
-            5. ¿Cuál de los siguientes es un TLD?
-
-        </h3>
-
-        <label>
-            <input type="radio" name="p5" value="a">
-            .com
-        </label>
-
-        <label>
-            <input type="radio" name="p5" value="b">
-            www
-        </label>
-
-        <label>
-            <input type="radio" name="p5" value="c">
-            http
-        </label>
-
-    </div>
-
-
-    <div class="pregunta">
-
-        <h3
-            data-es="6. ¿Cuál de estas plataformas puede utilizarse para desplegar un sitio web?"
-            data-en="6. Which of these platforms can be used to deploy a website?">
-
-            6. ¿Cuál de estas plataformas puede utilizarse
-            para desplegar un sitio web?
-
-        </h3>
-
-        <label>
-            <input type="radio" name="p6" value="a">
-            Vercel
-        </label>
-
-        <label>
-            <input type="radio" name="p6" value="b">
-            Word
-        </label>
-
-        <label>
-            <input type="radio" name="p6" value="c">
-            Paint
-        </label>
-
-    </div>
-
-
-    <div class="pregunta">
-
-        <h3
-            data-es="7. ¿Qué tecnología se encarga principalmente de la estructura de una página?"
-            data-en="7. Which technology is mainly responsible for a page's structure?">
-
-            7. ¿Qué tecnología se encarga principalmente
-            de la estructura de una página?
-
-        </h3>
-
-        <label>
-            <input type="radio" name="p7" value="a">
-            JavaScript
-        </label>
-
-        <label>
-            <input type="radio" name="p7" value="b">
-            HTML
-        </label>
-
-        <label>
-            <input type="radio" name="p7" value="c">
-            JSON
-        </label>
-
-    </div>
-
-
-    <div class="pregunta">
-
-        <h3
-            data-es="8. ¿Para qué se utiliza principalmente JSON?"
-            data-en="8. What is JSON mainly used for?">
-
-            8. ¿Para qué se utiliza principalmente JSON?
-
-        </h3>
-
-        <label>
-            <input type="radio" name="p8" value="a">
-            <span
-                data-es="Para intercambiar datos"
-                data-en="To exchange data">
-                Para intercambiar datos
-            </span>
-        </label>
-
-        <label>
-            <input type="radio" name="p8" value="b">
-            <span
-                data-es="Para diseñar páginas"
-                data-en="To design pages">
-                Para diseñar páginas
-            </span>
-        </label>
-
-        <label>
-            <input type="radio" name="p8" value="c">
-            <span
-                data-es="Para crear imágenes"
-                data-en="To create images">
-                Para crear imágenes
-            </span>
-        </label>
-
-    </div>
-
-
-    <div class="boton-quiz">
-
-        <button
-            type="submit"
-            data-es="Comprobar respuestas"
-            data-en="Check Answers">
-
-            Comprobar respuestas
-
-        </button>
-
-    </div>
-
+<div class="pregunta">
+<h3 data-es="1. ¿Qué lenguaje agrega comportamiento e interacción a una página web?" data-en="1. Which language adds behavior and interaction to a web page?">1. ¿Qué lenguaje agrega comportamiento e interacción a una página web?</h3>
+<label><input type="radio" name="p1" value="a"> HTML</label>
+<label><input type="radio" name="p1" value="b"> CSS</label>
+<label><input type="radio" name="p1" value="c"> JavaScript</label>
+</div>
+<div class="pregunta">
+<h3 data-es="2. ¿Qué símbolo se usa con frecuencia en jQuery?" data-en="2. Which symbol is used often in jQuery?">2. ¿Qué símbolo se usa con frecuencia en jQuery?</h3>
+<label><input type="radio" name="p2" value="a"> $</label>
+<label><input type="radio" name="p2" value="b"> #</label>
+<label><input type="radio" name="p2" value="c"> @</label>
+</div>
+<div class="pregunta">
+<h3 data-es="3. ¿Qué significa JSON?" data-en="3. What does JSON stand for?">3. ¿Qué significa JSON?</h3>
+<label><input type="radio" name="p3" value="a"> JavaScript Object Notation</label>
+<label><input type="radio" name="p3" value="b"> Java System Online Network</label>
+<label><input type="radio" name="p3" value="c"> JavaScript Online Name</label>
+</div>
+<div class="pregunta">
+<h3 data-es="4. ¿Qué servicio permite guardar los archivos de un sitio web?" data-en="4. Which service stores a website's files?">4. ¿Qué servicio permite guardar los archivos de un sitio web?</h3>
+<label><input type="radio" name="p4" value="a"> Hosting</label>
+<label><input type="radio" name="p4" value="b"> CSS</label>
+<label><input type="radio" name="p4" value="c"> HTML</label>
+</div>
+<div class="pregunta">
+<h3 data-es="5. ¿Cuál de estos es un TLD?" data-en="5. Which of these is a TLD?">5. ¿Cuál de estos es un TLD?</h3>
+<label><input type="radio" name="p5" value="a"> .com</label>
+<label><input type="radio" name="p5" value="b"> www</label>
+<label><input type="radio" name="p5" value="c"> http</label>
+</div>
+<div class="pregunta">
+<h3 data-es="6. ¿Cuál de estas plataformas sirve para publicar un sitio web?" data-en="6. Which of these platforms can publish a website?">6. ¿Cuál de estas plataformas sirve para publicar un sitio web?</h3>
+<label><input type="radio" name="p6" value="a"> Vercel</label>
+<label><input type="radio" name="p6" value="b"> Word</label>
+<label><input type="radio" name="p6" value="c"> Paint</label>
+</div>
+<div class="pregunta">
+<h3 data-es="7. ¿Qué tecnología se encarga sobre todo de la estructura de una página?" data-en="7. Which technology mainly handles a page's structure?">7. ¿Qué tecnología se encarga sobre todo de la estructura de una página?</h3>
+<label><input type="radio" name="p7" value="a"> JavaScript</label>
+<label><input type="radio" name="p7" value="b"> HTML</label>
+<label><input type="radio" name="p7" value="c"> JSON</label>
+</div>
+<div class="pregunta">
+<h3 data-es="8. ¿Para qué se usa principalmente JSON?" data-en="8. What is JSON mainly used for?">8. ¿Para qué se usa principalmente JSON?</h3>
+<label><input type="radio" name="p8" value="a"> <span data-es="Para intercambiar datos" data-en="To exchange data">Para intercambiar datos</span></label>
+<label><input type="radio" name="p8" value="b"> <span data-es="Para diseñar páginas" data-en="To design pages">Para diseñar páginas</span></label>
+<label><input type="radio" name="p8" value="c"> <span data-es="Para crear imágenes" data-en="To create images">Para crear imágenes</span></label>
+</div>
+<div class="boton-quiz"><button type="submit" class="btn-principal" data-es="Comprobar respuestas" data-en="Check answers">Comprobar respuestas</button></div>
 </form>
-
-
-<div id="resultado"></div>
-
+<div id="resultado" role="status" aria-live="polite"></div>
+</div>
 </main>
-
-
-<footer>
-
-    <h3>☕ Energy Coffee</h3>
-
-    <p
-        data-es="Cuestionario de Desarrollo Web"
-        data-en="Web Development Questionnaire">
-
-        Cuestionario de Desarrollo Web
-
-    </p>
-
-</footer>
-
-
+<footer class="pie" id="pie"></footer>
 <script src="script.js"></script>
-
-<script>
-
-    let idiomaActual = "es";
-
-    function cambiarIdioma() {
-
-        const elementos = document.querySelectorAll("[data-es][data-en]");
-        const boton = document.getElementById("idiomaBtn");
-
-        if (idiomaActual === "es") {
-
-            elementos.forEach(function(elemento) {
-                elemento.textContent = elemento.getAttribute("data-en");
-            });
-
-            boton.textContent = "🌐 Español";
-            document.documentElement.lang = "en";
-            idiomaActual = "en";
-
-        } else {
-
-            elementos.forEach(function(elemento) {
-                elemento.textContent = elemento.getAttribute("data-es");
-            });
-
-            boton.textContent = "🌐 English";
-            document.documentElement.lang = "es";
-            idiomaActual = "es";
-
-        }
-
-    }
-
-</script>
-
 </body>
-
 </html>
-```
